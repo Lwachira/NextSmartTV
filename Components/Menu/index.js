@@ -1,167 +1,39 @@
 import { Box, Text, Button } from "@chakra-ui/react";
+import useSWR from "swr";
+
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
 function Menu() {
+  const { data, error } = useSWR("/api/topics", fetcher);
+
+  if (error) return <div>Failed to load</div>;
+  if (!data) return <div>Loading...</div>;
+
   return (
     <Box bg="#A0AEC0" m={12} h="350px" w="30%">
-      <Button
-        bg="#E2E8F0"
-        border="0px solid"
-        borderRadius="0px"
-        variant="ghost"
-        w="100%"
-        _focus={{
-          borderLeft: "6px solid",
-          borderColor: "tomato",
-          bg: "#A0AEC0",
-        }}
-        _hover={{
-          borderLeft: "6px solid",
-          borderColor: "tomato",
-          bg: "#A0AEC0",
-        }}
-      >
-        Animation
-      </Button>
-
-      <Button
-        bg="#E2E8F0"
-        border="0px solid"
-        borderRadius="0px"
-        variant="ghost"
-        w="100%"
-        _focus={{
-          borderLeft: "6px solid",
-          borderColor: "tomato",
-          bg: "#A0AEC0",
-        }}
-        _hover={{
-          borderLeft: "6px solid",
-          borderColor: "tomato",
-          bg: "#A0AEC0",
-        }}
-      >
-        Cartooning
-      </Button>
-
-      <Button
-        bg="#E2E8F0"
-        border="0px solid"
-        borderRadius="0px"
-        variant="ghost"
-        w="100%"
-        _focus={{
-          borderLeft: "6px solid",
-          borderColor: "tomato",
-          bg: "#A0AEC0",
-        }}
-        _hover={{
-          borderLeft: "6px solid",
-          borderColor: "tomato",
-          bg: "#A0AEC0",
-        }}
-      >
-        Character Design
-      </Button>
-
-      <Button
-        bg="#E2E8F0"
-        border="0px solid"
-        borderRadius="0px"
-        variant="ghost"
-        w="100%"
-        _focus={{
-          borderLeft: "6px solid",
-          borderColor: "tomato",
-          bg: "#A0AEC0",
-        }}
-        _hover={{
-          borderLeft: "6px solid",
-          borderColor: "tomato",
-          bg: "#A0AEC0",
-        }}
-      >
-        Comedy
-      </Button>
-
-      <Button
-        bg="#E2E8F0"
-        border="0px solid"
-        borderRadius="0px"
-        variant="ghost"
-        w="100%"
-        _focus={{
-          borderLeft: "6px solid",
-          borderColor: "tomato",
-          bg: "#A0AEC0",
-        }}
-        _hover={{
-          borderLeft: "6px solid",
-          borderColor: "tomato",
-          bg: "#A0AEC0",
-        }}
-      >
-        Design
-      </Button>
-
-      <Button
-        bg="#E2E8F0"
-        border="0px solid"
-        borderRadius="0px"
-        variant="ghost"
-        w="100%"
-        _focus={{
-          borderLeft: "6px solid",
-          borderColor: "tomato",
-          bg: "#A0AEC0",
-        }}
-        _hover={{
-          borderLeft: "6px solid",
-          borderColor: "tomato",
-          bg: "#A0AEC0",
-        }}
-      >
-        DJing
-      </Button>
-
-      <Button
-        bg="#E2E8F0"
-        border="0px solid"
-        borderRadius="0px"
-        variant="ghost"
-        w="100%"
-        _focus={{
-          borderLeft: "6px solid",
-          borderColor: "tomato",
-          bg: "#A0AEC0",
-        }}
-        _hover={{
-          borderLeft: "6px solid",
-          borderColor: "tomato",
-          bg: "#A0AEC0",
-        }}
-      >
-        Engineering
-      </Button>
-
-      <Button
-        bg="#E2E8F0"
-        border="0px solid"
-        borderRadius="0px"
-        variant="ghost"
-        w="100%"
-        _focus={{
-          borderLeft: "6px solid",
-          borderColor: "tomato",
-          bg: "#A0AEC0",
-        }}
-        _hover={{
-          borderLeft: "6px solid",
-          borderColor: "tomato",
-          bg: "#A0AEC0",
-        }}
-      >
-        Game Design
-      </Button>
+      {data.topicList.map((item) => (
+        <Button
+          key={item.id}
+          value={item.id}
+          bg="#E2E8F0"
+          border="0px solid"
+          borderRadius="0px"
+          variant="ghost"
+          w="100%"
+          _focus={{
+            borderLeft: "6px solid",
+            borderColor: "tomato",
+            bg: "#A0AEC0",
+          }}
+          _hover={{
+            borderLeft: "6px solid",
+            borderColor: "tomato",
+            bg: "#A0AEC0",
+          }}
+        >
+          {item.title}
+        </Button>
+      ))}
     </Box>
   );
 }
