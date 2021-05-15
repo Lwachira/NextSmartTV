@@ -3,18 +3,19 @@ import useSWR from "swr";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
-function Menu() {
+function Menu(props) {
   const { data, error } = useSWR("/api/topics", fetcher);
 
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
 
   return (
-    <Box bg="#A0AEC0" m={12} h="350px" w="30%">
+    <Box bg="#A0AEC0" m={12} h="450px" w="30%">
       {data.topicList.map((item) => (
         <Button
           key={item.id}
           value={item.id}
+          onClick={() => props.setTopicName(item.slug)}
           bg="#E2E8F0"
           border="0px solid"
           borderRadius="0px"

@@ -1,10 +1,13 @@
 import Head from "next/head";
-import Image from "next/image";
+import React, { useState } from "react";
 import styles from "../styles/Home.module.css";
-import { Box } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import Menu from "../Components/Menu";
+import PhotoGrid from "../Components/PhotoGrid";
 
 export default function Home() {
+  const [topicname, setTopicName] = useState("");
+  console.log(topicname);
   return (
     <Box>
       <Head>
@@ -13,7 +16,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Menu></Menu>
+      {/*     <Flex>
+        <Menu></Menu>
+      </Flex> */}
+
+      <Flex>
+        <Menu setTopicName={setTopicName}></Menu>
+        <PhotoGrid topicname={topicname}></PhotoGrid>
+      </Flex>
     </Box>
   );
 }
