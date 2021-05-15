@@ -6,7 +6,7 @@ export default async (_, res) => {
   });
 
   const topicList = await unsplash.topics.list({
-    page: 1,
+    page: 2,
     perPage: 10,
   });
 
