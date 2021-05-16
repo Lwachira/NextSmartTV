@@ -17,7 +17,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ```bash
 make sure to fill the .env.production or .env.development with your key
-npm rub build
+npm run build
 npm run start
 # or
 yarn build
@@ -48,4 +48,4 @@ I decided to use Nextjs for the ease of deploying to vercel:
 
   - I ended up also deploying the code to a [live url](https://linc-next-smart-tv.vercel.app/) this was for security benefits as well as a backup to murphy’s law.
 
-  
+
