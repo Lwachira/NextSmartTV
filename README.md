@@ -5,6 +5,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 First, run the development server:
 
 ```bash
+make sure to fill the .env.production or .env.development with your key
 npm run dev
 # or
 yarn dev
@@ -15,6 +16,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ### Running as a live instance on your machine
 
 ```bash
+make sure to fill the .env.production or .env.development with your key
 npm rub build
 npm run start
 # or
@@ -44,4 +46,6 @@ I decided to use Nextjs for the ease of deploying to vercel:
 
 - I wanted to abide by Unsplash rule about securing API key, so when you use the application you’ll need to use your own API Key. I figured the best way to use their API is to nest the code inside Nextjs API routes (You can find the code in the API folder) and also use ENV variables.
 
-  - I ended up also deploying the code to a [live url](https://linc-next-smart-tv.vercel.app/)
+  - I ended up also deploying the code to a [live url](https://linc-next-smart-tv.vercel.app/) this was for security benefits as well as a backup to murphy’s law.
+
+  
