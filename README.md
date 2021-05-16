@@ -48,4 +48,4 @@ I decided to use Nextjs for the ease of deploying to vercel:
 
   - I ended up also deploying the code to a [live url](https://linc-next-smart-tv.vercel.app/) this was for security benefits as well as a backup to murphy’s law.
 
-
+- I wanted to get the div around the images to be tabable, the only use case would be allowing a user to press tab to select an image. I thought it would be kinda cool, the way I did it was tabindex = {index of array} for some reason the code didn’t work, so I ended up rolling back.
