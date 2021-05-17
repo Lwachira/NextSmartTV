@@ -1,17 +1,9 @@
 import { Box, Button } from "@chakra-ui/react";
-import useSWR from "swr";
-
-const fetcher = (url) => fetch(url).then((res) => res.json());
 
 function Menu(props) {
-  const { data, error } = useSWR("/api/topics", fetcher);
-
-  if (error) return <div>Failed to load</div>;
-  if (!data) return <div>Loading...</div>;
-
   return (
-    <Box bg="#A0AEC0" m={12} h="701px" w={{ sm: "273.5px" }}>
-      {data.topicList.map((item) => (
+    <Box bg="#A0AEC0" m={12} h={{ sm: "201px" }} w={{ sm: "273.5px" }}>
+      {props.data.topicList.map((item) => (
         <Button
           key={item.id}
           value={item.id}
