@@ -21,6 +21,7 @@ function PhotoGrid(props) {
             src={item.urls.regular}
             alt={item.alt_description}
             objectFit="cover"
+            layout="responsive"
             _focus={{
               border: "6px solid",
               borderColor: "tomato",
