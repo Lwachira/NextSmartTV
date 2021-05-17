@@ -1,4 +1,4 @@
-import { createApi, toJson } from "unsplash-js";
+import { createApi } from "unsplash-js";
 
 export default async (req, res) => {
   const { id } = req.query;

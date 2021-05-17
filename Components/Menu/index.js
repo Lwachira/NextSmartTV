@@ -1,4 +1,4 @@
-import { Box, Text, Button } from "@chakra-ui/react";
+import { Box, Button } from "@chakra-ui/react";
 import useSWR from "swr";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());

@@ -1,7 +1,6 @@
 import Head from "next/head";
 import React, { useState } from "react";
-import styles from "../styles/Home.module.css";
-import { Box, Flex, Heading, Link } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import Menu from "../Components/Menu";
 import PhotoGrid from "../Components/PhotoGrid";
 

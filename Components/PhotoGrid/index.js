@@ -1,5 +1,5 @@
-import { Box, Flex, Grid, Container, Image } from "@chakra-ui/react";
-import styles from "../../styles/Home.module.css";
+import { Box, Image } from "@chakra-ui/react";
+import styles from "./photogrid.module.css";
 
 import useSWR from "swr";
 
