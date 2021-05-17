@@ -8,8 +8,8 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 function PhotoGrid(props) {
   const { data, error } = useSWR(`/api/photo/${props.topicname}`, fetcher);
 
-  if (error) return <div>Failed to load</div>;
-  if (!data) return <div>Loading...</div>;
+  if (error) return <Box className={styles.grid}>Failed to load</Box>;
+  if (!data) return <Box className={styles.grid}>Loading ...</Box>;
 
   return (
     <Box className={styles.grid}>
