@@ -10,7 +10,7 @@ function Menu(props) {
   if (!data) return <div>Loading...</div>;
 
   return (
-    <Box bg="#A0AEC0" m={12} w="200px">
+    <Box bg="#A0AEC0" m={12} h="701px" w={{ sm: "273.5px" }}>
       {data.topicList.map((item) => (
         <Button
           key={item.id}

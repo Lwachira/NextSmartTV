@@ -6,6 +6,7 @@
   grid-auto-columns: minmax(260px, 1fr);
   overflow-x: scroll;
   gap: 60px;
+  margin-left: 10px;
   padding: 60px;
   scroll-snap-type: x mandatory;
 }
