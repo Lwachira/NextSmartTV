@@ -2,12 +2,7 @@ import { Box, Button } from "@chakra-ui/react";
 
 function Menu(props) {
   return (
-    <Box
-      bg="#A0AEC0"
-      m={{ sm: 1, md: 2, lg: 2 }}
-      h={{ sm: "201px", md: "701px", lg: "701px" }}
-      w={{ sm: "273.5px" }}
-    >
+    <Box bg="#A0AEC0" m={12} h={{ sm: "201px" }} w={{ sm: "273.5px" }}>
       {props.data.topicList.map((item) => (
         <Button
           key={item.id}
