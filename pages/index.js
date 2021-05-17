@@ -3,10 +3,16 @@ import React, { useState } from "react";
 import { Box } from "@chakra-ui/react";
 import Menu from "../Components/Menu";
 import PhotoGrid from "../Components/PhotoGrid";
+import useSWR from "swr";
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Home() {
   const [topicname, setTopicName] = useState("film");
-  console.log(topicname);
+  const { data, error } = useSWR("/api/topics", fetcher);
+
+  if (error) return <div>Failed to load</div>;
+  if (!data) return <div>Loading...</div>;
+
   return (
     <Box>
       <Head>
@@ -16,7 +22,7 @@ export default function Home() {
       </Head>
 
       <Box display={{ sm: "block", md: "flex" }}>
-        <Menu setTopicName={setTopicName}></Menu>
+        <Menu setTopicName={setTopicName} data={data}></Menu>
         <PhotoGrid topicname={topicname}></PhotoGrid>
       </Box>
     </Box>
