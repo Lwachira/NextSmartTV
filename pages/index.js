@@ -16,15 +16,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/*     <Flex>
-        <Menu></Menu>
-      </Flex> */}
-
       <Flex>
         <Menu setTopicName={setTopicName}></Menu>
         <PhotoGrid topicname={topicname}></PhotoGrid>
       </Flex>
-
     </Box>
   );
 }
