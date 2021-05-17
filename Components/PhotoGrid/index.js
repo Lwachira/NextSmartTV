@@ -1,6 +1,6 @@
-import { Box, Image } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import styles from "./photogrid.module.css";
-
+import Image from "next/image";
 import useSWR from "swr";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
@@ -16,10 +16,11 @@ function PhotoGrid(props) {
       {data.topicPhotoList.map((item) => (
         <Box className={styles.image} key={item.id}>
           <Image
-            boxSize="300px"
-            objectFit="cover"
+            width="300px"
+            height="300px"
             src={item.urls.regular}
             alt={item.alt_description}
+            objectFit="cover"
             _focus={{
               border: "6px solid",
               borderColor: "tomato",
