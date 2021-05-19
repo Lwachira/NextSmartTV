@@ -1,12 +1,13 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  grid-template-rows: repeat(2, 1fr);
+
   grid-auto-flow: column;
   grid-auto-columns: minmax(260px, 1fr);
   overflow-x: scroll;
   gap: 60px;
   margin-left: 10px;
+  margin-bottom: 0px;
   padding: 60px;
   scroll-snap-type: x mandatory;
   width: 1538.82px;

@@ -1,4 +1,4 @@
-import { Box, Image } from "@chakra-ui/react";
+import { Box, Image, Grid } from "@chakra-ui/react";
 import styles from "./photogrid.module.css";
 import useSWR from "swr";
 
@@ -11,7 +11,15 @@ function PhotoGrid(props) {
   if (!data) return <Box className={styles.grid}>Loading ...</Box>;
 
   return (
-    <Box className={styles.grid}>
+    <Grid
+      className={styles.grid}
+      templateRows={{
+        sm: "repeat(1, 1fr)",
+        md: "repeat(2, 1fr)",
+        lg: "repeat(2, 1fr)",
+        xl: "repeat(2, 1fr)",
+      }}
+    >
       {data.topicPhotoList.map((item) => (
         <Box className={styles.image} key={item.id}>
           <Image
@@ -34,7 +42,7 @@ function PhotoGrid(props) {
           />
         </Box>
       ))}
-    </Box>
+    </Grid>
   );
 }
 export default PhotoGrid;
