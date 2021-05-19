@@ -104,3 +104,5 @@ dist
 .env.production
 .env.development
 .env.production
+*.development
+*.production

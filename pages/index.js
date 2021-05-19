@@ -21,7 +21,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Box display={{ sm: "block", md: "flex" }}>
+      <Box display={{ sm: "block", md: "flex", lg: "flex", xl: "flex" }}>
         <Menu setTopicName={setTopicName} data={data}></Menu>
         <PhotoGrid topicname={topicname}></PhotoGrid>
       </Box>
