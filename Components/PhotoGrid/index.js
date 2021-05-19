@@ -1,6 +1,5 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Image } from "@chakra-ui/react";
 import styles from "./photogrid.module.css";
-import Image from "next/image";
 import useSWR from "swr";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
