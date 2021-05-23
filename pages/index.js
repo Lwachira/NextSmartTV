@@ -1,9 +1,9 @@
+import { Box } from "@chakra-ui/react";
 import Head from "next/head";
 import React, { useState } from "react";
-import { Box } from "@chakra-ui/react";
+import useSWR from "swr";
 import Menu from "../Components/Menu";
 import PhotoGrid from "../Components/PhotoGrid";
-import useSWR from "swr";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function Home() {
